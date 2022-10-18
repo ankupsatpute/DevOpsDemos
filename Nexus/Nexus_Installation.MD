@@ -11,9 +11,9 @@ Nexus is one a artifact repository which helps to store your build outcomes.
 Download and setup nexus stable version
 ```sh 
 cd /opt
-wget https://sonatype-download.global.ssl.fastly.net/nexus/3/nexus-3.0.2-02-unix.tar.gz
-tar -zxvf  nexus-3.0.2-02-unix.tar.gz
-mv /opt/nexus-3.0.2-02 /opt/nexus
+wget https://download.sonatype.com/nexus/3/nexus-3.42.0-01-unix.tar.gz 
+tar -zxvf  nexus-3.42.0-01-unix.tar.gz 
+mv /opt/nexus-3.42.0-01 /opt/nexus
 ```
 
 As a good security practice, it is not advised to run nexus service as root. so create new user called nexus and grant sudo access to manage nexus services 
