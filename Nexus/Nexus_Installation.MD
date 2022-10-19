@@ -10,6 +10,14 @@ Nexus is one a artifact repository which helps to store your build outcomes.
 
 Download and setup nexus stable version
 ```sh 
+
+cd /opt
+wget https://download.sonatype.com/nexus/3/latest-unix.tar.gz
+tar -xvzf latest-unix.tar.gz
+cd < latest version of nexus >
+cd bin
+./nexus status , start , stop
+----------------------------OR----------------------------
 cd /opt
 wget https://download.sonatype.com/nexus/3/nexus-3.42.0-01-unix.tar.gz 
 tar -zxvf  nexus-3.42.0-01-unix.tar.gz 
