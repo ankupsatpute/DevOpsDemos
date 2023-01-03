@@ -56,3 +56,31 @@ Execute job to get analysis report.
 
 ### Next Step
 - [x] [Nexus Installation](https://www.youtube.com/watch?v=83AGz9huJGo)
+
+
+
+
+##### SONAR QULITY GATES ######
+1) Set up the Qulity Gates under the sonar Qube server .
+
+Qulity Gates -> Create -> Give the Qulity Gates Name -> Add Condition -> Make as default .
+
+2) Set up Qulity Gate Webhook configuration .
+
+Administration -> Configure (click on arrow ) -> Webhook (Choose the Webhook Option ) -> Provide the jenkins url ( http://localhost:8080/sonarqube-webhook )->Save
+
+3) On Jenkins Server
+
+Manage jenkins -> Configure System -> QulityGate Scanner -> 
+A) Provide the Name
+B) Provide the SonarQube Url ( Note: But while provide the url at that time in last do not add the / into the sonarqube url )
+C) Add the Generated SonarQube Token .
+D) Apply and Save
+
+4) Add below step after the sonar scanner steps .
+
+        stage("Quality Gate"){
+            steps{
+                waitForQualityGate abortPipeline: true, credentialsId: 'sonarqube-token'   // credentail store under the manage credential section .
+            }
+        }  
